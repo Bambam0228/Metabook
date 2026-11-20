@@ -1,0 +1,38 @@
+name: Daily meta update
+
+on:
+  schedule:
+    - cron: "23 10 * * *" # every day 10:23 UTC (6:23 AM Puerto Rico)
+  workflow_dispatch: {} # "Run workflow" button in the Actions tab
+  push:
+    branches: [main]
+    paths: ["scripts/**", ".github/workflows/update-meta.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: meta-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test parsers
+        run: node scripts/test-parse.mjs
+      - name: Pull tournaments and rebuild rankings
+        run: node scripts/update.mjs
+      - name: Commit data
+        run: |
+          git config user.name "meta-grimoire-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Daily meta update $(date -u +%F)"
+          git push

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meta Grimoire: what's winning in cEDH, Modern, Standard and Legacy</title>
+  <meta name="description" content="Daily-updated winning decks, top 10 archetypes and tournament history for cEDH, Modern, Standard and Legacy, plus a card lookup with prices for every printing.">
+  <meta name="theme-color" content="#1c1511">
+  <link rel="preconnect" href="https://api.scryfall.com" crossorigin>
+  <link rel="preconnect" href="https://cards.scryfall.io">
+  <link rel="preconnect" href="https://svgs.scryfall.io">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="data/meta.json" as="fetch" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>try{var z=localStorage.getItem("pageZoom"),s=[.8,.87,.93,1,1.07,1.15];document.documentElement.style.fontSize=(93.75*(s[z==null?3:+z]||1))+"%"}catch(e){}</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4 56 18v28L32 60 8 46V18z' fill='%231c1511' stroke='%23c9a55a' stroke-width='4'/%3E%3Cpath d='M32 16 42 32 32 48 22 32z' fill='%23c9a55a'/%3E%3C/svg%3E">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Meta Grimoire home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 56 18v28L32 60 8 46V18z" fill="none" stroke="currentColor" stroke-width="4"/><path d="M32 16 42 32 32 48 22 32z" fill="currentColor"/></svg>
+      <span>Meta Grimoire</span>
+    </a>
+    <nav class="mainnav" aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#events" data-nav="events">Tournaments</a>
+      <a href="#colors" data-nav="colors">Colors</a>
+      <a href="#cards" data-nav="cards">Card lookup</a>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <footer class="footer">
+    <p>Meta Grimoire is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p>
+    <p>Card data, images and prices come from <a href="https://scryfall.com" rel="noopener">Scryfall</a>, whose prices are TCGplayer, Cardmarket and Cardhoarder market data refreshed daily. Tournament results come from <a href="https://www.mtgtop8.com" rel="noopener">MTGTop8</a>. All art is official Magic art, credited to its artist. Not affiliated with Scryfall or MTGTop8.</p>
+  </footer>
+
+  <div id="preview" class="preview" aria-hidden="true"><img alt=""><img alt="" class="back"></div>
+  <div id="modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-x" data-close aria-label="Close">×</button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
