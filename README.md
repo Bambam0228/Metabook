@@ -1,6 +1,6 @@
 # Meta Grimoire
 
-Daily-updated MTG tournament meta for **cEDH, Modern, Standard and Legacy**.
+Daily-updated MTG tournament meta for **cEDH, Modern, Standard, Legacy and pauper**.
 
 - **Home**: the headline is the control (“What's winning in cEDH / Modern / Standard / Legacy this week / month”). Three random cards sit next to it, with a new set on every page switch. **Reveal the top 10** deals the ten best archetypes out as real card frames: the frame color is the deck's color identity, the art is its signature card, and the P/T box shows wins/top 8s.
 - **Tournaments**: 120 days of event history per format, with top-8 standings and full decklists (copy button, list or visual view).
